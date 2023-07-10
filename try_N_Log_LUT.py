@@ -18,9 +18,9 @@ def n_log_curve(x):
 
 y_LUT = n_log_curve(x_input)
 
-aesthetic_LUT_name = "N_Log_Curve_EOTF"
-aesthetic_LUT_safe = aesthetic_LUT_name.replace(" ", "_")
-aesthetic_LUT = colour.LUT1D(
+LUT_name = "N_Log_Curve_EOTF"
+LUT_safe = LUT_name.replace(" ", "_")
+LUT = colour.LUT1D(
     table=y_LUT,
     name="N_Log_Curve_EOTF"
 )
@@ -29,10 +29,10 @@ try:
     output_directory = pathlib.Path(output_config_directory)
     LUTs_directory = output_directory / output_LUTs_directory
     LUT_filename = pathlib.Path(
-        LUTs_directory / "{}.spi1d".format(aesthetic_LUT_safe)
+        LUTs_directory / "{}.spi1d".format(LUT_safe)
     )
     LUTs_directory.mkdir(parents=True, exist_ok=True)
-    colour.io.luts.write_LUT(aesthetic_LUT, LUT_filename, method="Sony SPI1D")
+    colour.io.luts.write_LUT(LUT, LUT_filename, method="Sony SPI1D")
 
 except Exception as ex:
     raise ex
