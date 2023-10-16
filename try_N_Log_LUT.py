@@ -1,6 +1,5 @@
 import colour
 import numpy
-import pathlib
 
 
 def n_log_curve(x):
