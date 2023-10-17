@@ -3,9 +3,9 @@ import numpy
 
 
 def n_log_curve(x):
-    curve_lower = ((x / (650 / 1024)) ** 3) - 0.0075
-    curve_upper = numpy.exp((x - 619 / 1024) / (150 / 1024))
-    curve = numpy.where(x < 452/1024, curve_lower, curve_upper)
+    curve_lower = ((x / (650 / 1023)) ** 3) - 0.0075
+    curve_upper = numpy.exp((x - 619 / 1023) / (150 / 1023))
+    curve = numpy.where(x < 452/1023, curve_lower, curve_upper)
 
     return curve
 
